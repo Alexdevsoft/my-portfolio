@@ -52,7 +52,8 @@ classDiagram
     Raiz "1" -- "1" css : contém
     Raiz "1" -- "1" js : contém
     Raiz "1" -- "1" projects : contém
-    ```
+```
+
 
 ## 🌐 Deploy no Render (Instruções)
 
