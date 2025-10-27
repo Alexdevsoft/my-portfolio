@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/snake.css">
+    <title>Jogo Snake</title>
+</head>
+
+<body>
+    <div class="game-container">
+        <h1>🐍 Jogo Snake</h1>
+
+        <div class="game-info">
+            <div class="info-item">
+                <div class="info-label">Pontuação</div>
+                <div class="info-value" id="score">0</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Recorde</div>
+                <div class="info-value" id="highScore">0</div>
+            </div>
+        </div>
+
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+        <div style="margin-top:10px;">
+            <button id="startBtn">▶️ Iniciar</button>
+            <p>Pontuação: <span id="score">0</span> | Recorde: <span id="highScore">0</span></p>
+        </div>
+
+        <div class="game-over" id="gameOver">
+            💀 Game Over! Pressione Iniciar para jogar novamente
+        </div>
+
+        <div class="instructions">
+            <strong>Como jogar:</strong> Use as setas do teclado ou os botões para mover a cobra.
+            Coma as maçãs vermelhas para crescer e ganhar pontos. Não bata nas paredes ou em si mesmo!
+        </div>
+    </div>
+
+    <script src="js/snake.js"></script>
+</body>
+
+</html>

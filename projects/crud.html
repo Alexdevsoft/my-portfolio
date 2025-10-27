@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/crud.css">
+    <title>CRUD - Gerenciador de Contatos</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>📇 Gerenciador de Contatos</h1>
+
+        <div class="form-section">
+            <div class="form-group">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" placeholder="Digite o nome completo">
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" placeholder="Digite o e-mail">
+            </div>
+            <div class="form-group">
+                <label for="phone">Telefone:</label>
+                <input type="tel" id="phone" placeholder="Digite o telefone">
+            </div>
+            <div class="btn-group">
+                <button class="btn-add" onclick="addContact()">➕ Adicionar Contato</button>
+                <button class="btn-update" onclick="updateContact()">✏️ Atualizar Contato</button>
+                <button class="btn-cancel" onclick="cancelEdit()">❌ Cancelar</button>
+            </div>
+        </div>
+
+        <div class="contacts-section">
+            <h2>Lista de Contatos</h2>
+            <div class="contacts-list" id="contactsList">
+                <div class="empty-state">
+                    <div class="empty-state-icon">📭</div>
+                    <p>Nenhum contato cadastrado ainda.</p>
+                    <p>Adicione seu primeiro contato acima!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/crud.js"></script>
+</body>
+
+</html>

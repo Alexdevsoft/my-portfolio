@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.game-container {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+h1 {
+    color: #11998e;
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.info-item {
+    text-align: center;
+}
+
+.info-label {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.info-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #11998e;
+}
+
+#gameCanvas {
+    border: 3px solid #11998e;
+    border-radius: 10px;
+    background: #000;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.controls {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.controls-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.btn-control {
+    padding: 15px;
+    font-size: 1.5rem;
+    border: 2px solid #11998e;
+    background: white;
+    color: #11998e;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-control:hover {
+    background: #11998e;
+    color: white;
+    transform: scale(1.05);
+}
+
+.btn-control:active {
+    transform: scale(0.95);
+}
+
+.btn-control.up {
+    grid-column: 2;
+}
+
+.btn-control.left {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.btn-control.down {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.btn-control.right {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+#startBtn {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: #11998e;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#startBtn:hover {
+    background: #0d7a6f;
+    transform: translateY(-2px);
+}
+
+.game-over {
+    display: none;
+    padding: 20px;
+    background: #ff6b6b;
+    color: white;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.instructions {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.instructions strong {
+    color: #11998e;
+}

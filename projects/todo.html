@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="todo.css">
+    <title>Lista de Tarefas</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>📝 Lista de Tarefas</h1>
+        <p class="subtitle">Organize seu dia!</p>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-value" id="totalTasks">0</div>
+                <div class="stat-label">Total</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="pendingTasks">0</div>
+                <div class="stat-label">Pendentes</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="completedTasks">0</div>
+                <div class="stat-label">Concluídas</div>
+            </div>
+        </div>
+
+        <div class="input-section">
+            <input type="text" id="taskInput" placeholder="Adicione uma nova tarefa...">
+            <button class="btn-add" onclick="addTask()">➕</button>
+        </div>
+
+        <div class="filter-section">
+            <button class="filter-btn active" onclick="filterTasks('all')">Todas</button>
+            <button class="filter-btn" onclick="filterTasks('pending')">Pendentes</button>
+            <button class="filter-btn" onclick="filterTasks('completed')">Concluídas</button>
+        </div>
+
+        <div class="tasks-list" id="tasksList">
+        </div>
+
+        <button class="btn-clear-all" id="clearAllBtn" onclick="clearAllTasks()" style="display: none;">❌ Limpar
+            Todas</button>
+    </div>
+
+    <script src="todo.js"></script>
+</body>
+
+</html>
