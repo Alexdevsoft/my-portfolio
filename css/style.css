@@ -8,7 +8,7 @@
     width: 80px;
     height: 1000px;
     background-color: #1c1c1c;
-    border: 1px solid #3c3c3c;
+    border: 0.5px solid #3c3c3c;
     float: left;
 }
 
@@ -19,6 +19,17 @@
     border: 1px solid #3c3c3c;
     float: left;
     margin-right: 90px;
+}
+
+.fa-linkedin {
+    font-size: 40px;
+    color: #A9A9A9;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+.fa-linkedin:hover {
+    color: white;
 }
 
 body {
