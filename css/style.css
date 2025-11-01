@@ -18,7 +18,7 @@
     background-color: #1c1c1c;
     border: 1px solid #3c3c3c;
     float: left;
-    margin-right: 90px;
+    margin-right: 10px;
 }
 
 .fa-linkedin {
@@ -85,18 +85,51 @@ body {
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 20px;
+
 }
+
+.menu {
+    background-color: #1c1c1c;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+
+}
+
+.menu li {
+    display: inline-block;
+    border-right: 0.5px solid #3c3c3c;
+    border-bottom: 0.5px solid #3c3c3c;
+    margin: 0;
+    padding: 0;
+
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #d7983f;
+    padding: 10px 45px;
+    display: block;
+
+}
+
+.menu li a:hover {
+    background-color: #333;
+
+}
+
 
 .profile-section {
     display: flex;
     align-items: center;
     gap: 30px;
     padding: 40px 0;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid rgba(219, 211, 211, 0.1);
     margin-bottom: 40px;
+
 }
 
 .profile-image {
@@ -110,6 +143,7 @@ body {
     object-fit: cover;
     border: 4px solid #fff;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    margin-left: 50px;
 }
 
 .profile-info h1 {
@@ -143,8 +177,9 @@ body {
     font-size: 2rem;
     color: #fff;
     margin-bottom: 20px;
-    border-left: 5px solid #4CAF50;
+    margin-left: 400px;
     padding-left: 15px;
+
 }
 
 .projects-list {
@@ -158,6 +193,8 @@ body {
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-right: 450px;
+    margin-left: 50px;
 }
 
 .project-title {
