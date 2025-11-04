@@ -22,10 +22,7 @@
             <h2>📂 PORTFÓLIO</h2>
 
             <ul class="file-tree">
-                <!-- Arquivo inicial -->
                 <li class="file" onclick="openPage('index', 'Index.html')">📄 index.html</li>
-
-                <!-- Pasta Pages -->
                 <li class="folder" onclick="toggleFolder(this)">
                     <span class="arrow">▶</span> <span class="folder-icon">📁</span> Pages
                 </li>
@@ -37,7 +34,6 @@
                     <li class="file" onclick="openPage('contato', 'Contato.py')">🐍 contato.py</li>
                 </ul>
 
-                <!-- Pasta Config -->
                 <li class="folder" onclick="toggleFolder(this)">
                     <span class="arrow">▶</span> <span class="folder-icon">📁</span> Config
                 </li>
@@ -48,51 +44,60 @@
             </ul>
         </aside>
     </div>
-    <!--<img src="https://i.postimg.cc/G2TVyWW9/alexfulljpg.jpg" alt="Alexsandro Almeida">-->
 
     <main class="projects-section">
+
         <div class="tabs" id="tabs"></div>
         <div class="content" id="content">
+            <h2>Bem vindo ao meu Portfólio</h2>
+            <h3>Portfólio ainda em desenvolvimento 04/11/2025</h3>
+            <H3>Selecione um ítem no menu lateral para abrir</H3><br><br>
+            <div class="perfil-card">
+                <div class="profile-image">
+                    <img src="https://i.postimg.cc/cJqK6kPK/alexholo.jpg" alt="Alexsandro Almeida">
+                </div>
+                <div class="profile-info">
+                    <h3>Alexsandro Almeida<br>45 anos<br>Analista Desenvolvimento de Sistemas</h3>
+                </div>
+            </div>
+            <h2>My projects</h2>
+            <div class="projects-list">
+                <div class="project-item" data-project="calculadora">
+                    <h3 class="project-title">Calculadora Básica</h3>
+                    <div class="project-content">
+                        <iframe src="/projects/calculadora.html"></iframe>
+                    </div>
+                </div>
 
-            <h2>Bem-vindo ao meu Portfólio!</h2>
-            <h3>Portfólio ainda em desenvolvimento 03/11/2025</h3>
-        </div>
-        <h2>My projects</h2>
-        <div class="projects-list">
-            <div class="project-item" data-project="calculadora">
-                <h3 class="project-title">Calculadora Básica</h3>
-                <div class="project-content">
-                    <iframe src="/projects/calculadora.html"></iframe>
+                <div class="project-item" data-project="crud">
+                    <h3 class="project-title">CRUD</h3>
+                    <div class="project-content">
+                        <iframe src="/projects/crud.html"></iframe>
+                    </div>
+                </div>
+
+                <div class="project-item" data-project="todo">
+                    <h3 class="project-title">Lista de Tarefas (TO DO LIST)</h3>
+                    <div class="project-content">
+                        <iframe src="/projects/todo.html"></iframe>
+                    </div>
+                </div>
+
+                <div class="project-item" data-project="snake">
+                    <h3 class="project-title">Jogo Snake</h3>
+                    <div class="project-content">
+                        <iframe src="/projects/snake.html"></iframe>
+                    </div>
+                </div>
+
+                <div class="project-item" data-project="password">
+                    <h3 class="project-title">Gerador de Senhas</h3>
+                    <div class="project-content">
+                        <iframe src="/projects/password.html"></iframe>
+                    </div>
                 </div>
             </div>
 
-            <div class="project-item" data-project="crud">
-                <h3 class="project-title">CRUD</h3>
-                <div class="project-content">
-                    <iframe src="/projects/crud.html"></iframe>
-                </div>
-            </div>
-
-            <div class="project-item" data-project="todo">
-                <h3 class="project-title">Lista de Tarefas (TO DO LIST)</h3>
-                <div class="project-content">
-                    <iframe src="/projects/todo.html"></iframe>
-                </div>
-            </div>
-
-            <div class="project-item" data-project="snake">
-                <h3 class="project-title">Jogo Snake</h3>
-                <div class="project-content">
-                    <iframe src="/projects/snake.html"></iframe>
-                </div>
-            </div>
-
-            <div class="project-item" data-project="password">
-                <h3 class="project-title">Gerador de Senhas</h3>
-                <div class="project-content">
-                    <iframe src="/projects/password.html"></iframe>
-                </div>
-            </div>
         </div>
     </main>
 

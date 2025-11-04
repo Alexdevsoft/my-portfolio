@@ -44,7 +44,7 @@ function closeTab(id, event) {
     delete openTabs[id];
 
     if (!Object.keys(openTabs).length) {
-        contentContainer.innerHTML = "<h2>Bem-vindo ao seu Portfólio!</h2><p>Selecione um arquivo no menu lateral para abrir.</p>";
+        contentContainer.innerHTML = "<h2>Bem-vindo ao meu Portfólio!</h2><p>Selecione um arquivo no menu lateral para abrir.</p>";
     } else {
         const lastId = Object.keys(openTabs)[Object.keys(openTabs).length - 1];
         setActiveTab(lastId);

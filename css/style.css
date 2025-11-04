@@ -6,7 +6,7 @@
 
 .vertical-line {
     width: 80px;
-    height: 1000px;
+    height: 1090px;
     background-color: #1c1c1c;
     border-width: 0.5px solid #3c3c3c;
     float: left;
@@ -14,7 +14,7 @@
 
 .vertical-line-2 {
     width: 240px;
-    height: 1000px;
+    height: 1090px;
     background-color: #1c1c1c;
     border: 1px solid #3c3c3c;
     float: left;
@@ -123,9 +123,10 @@
 
 /* Conteúdo */
 .content {
+    margin-left: 320px;
     flex-grow: 1;
     padding: 20px;
-    background-color: #1e1e1e;
+    background-color: #2d2d2d;
 }
 
 .fa-linkedin {
@@ -228,24 +229,37 @@ body {
 
 }
 
+.perfil-card {
+    display: flex;
+    border-radius: 8px;
+    background-color: #19162567;
+    padding: 20px 40px;
+    box-shadow: 0 4px 15px 5px rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    border-color: #ffffff;
+    width: fit-content;
 
-.profile-image {
-    flex-shrink: 0;
+
 }
 
 .profile-image img {
     width: 150px;
     height: 150px;
-    border-radius: 50%;
+    margin-right: 30px;
+    margin-top: 20px;
+    border-radius: 10%;
     object-fit: cover;
     border: 4px solid #fff;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    margin-left: 50px;
+    float: left;
 }
 
-.profile-info h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+.profile-info h3 {
+    margin-top: 20px;
+    margin-bottom: 150px;
+    font-family: monospace;
+    font-size: 25px;
+    color: #ffd105;
 }
 
 .contact-info p {
