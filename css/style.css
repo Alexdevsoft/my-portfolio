@@ -18,7 +18,114 @@
     background-color: #1c1c1c;
     border: 1px solid #3c3c3c;
     float: left;
-    margin-right: 10px;
+    margin-right: 1px;
+}
+
+.sidebar {
+    width: 235px;
+    background-color: #1c1c1c;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.file-tree {
+    list-style: none;
+}
+
+.file,
+.folder {
+    cursor: pointer;
+    padding: 4px 0 4px 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #ccc;
+    user-select: none;
+}
+
+.file:hover,
+.folder:hover {
+    background-color: #37373d;
+    color: #fff;
+}
+
+.folder .arrow {
+    transition: transform 0.2s;
+    display: inline-block;
+    width: 15px;
+    text-align: center;
+}
+
+.folder.open .arrow {
+    transform: rotate(90deg);
+}
+
+.folder.open .folder-icon::after {
+    content: "📂";
+}
+
+.nested {
+    display: none;
+    list-style: none;
+    padding-left: 20px;
+}
+
+.folder.open+.nested {
+    display: block;
+}
+
+.main-content {
+    flex-grow: 1;
+    background-color: #1e1e1e;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Abas */
+.tabs {
+    display: flex;
+    background-color: #2d2d2d;
+    border-bottom: 1px solid #3a3a3a;
+}
+
+.tab {
+    padding: 12px 14px;
+    cursor: pointer;
+    background-color: #2d2d2d;
+    color: #ccc;
+    margin-right: 2px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tab.active {
+    background-color: #3c3c3c;
+    color: #e4ab0f;
+}
+
+.tab .close {
+    cursor: pointer;
+    color: #fff;
+}
+
+.tab .close:hover {
+    color: #ff5555;
+}
+
+/* Conteúdo */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #1e1e1e;
 }
 
 .fa-linkedin {
@@ -121,16 +228,6 @@ body {
 
 }
 
-
-.profile-section {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    padding: 40px 0;
-    border-bottom: 2px solid rgba(219, 211, 211, 0.1);
-    margin-bottom: 40px;
-
-}
 
 .profile-image {
     flex-shrink: 0;

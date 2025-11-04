@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Alexsandro Almeida - Portfólio</title>
+    <title>Alexsandro - Portfólio</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -16,80 +16,92 @@
         <a href="https://www.instagram.com/alexalmeidadev" target="_blank"><i class="fa fa-instagram"></i></a>
         <a href="mail:alexhavilla2022@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
     </div>
-    <div class="vertical-line-2"></div>
+    <div class="vertical-line-2">
+        <aside class="sidebar">
+            <h2>EXPLORER</h2>
+            <h2>📂 PORTFÓLIO</h2>
 
-    <div class="container">
-        <nav>
-            <ul class="menu">
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Serviços</a></li>
-                <li><a href="#">Contato</a></li>
+            <ul class="file-tree">
+                <!-- Arquivo inicial -->
+                <li class="file" onclick="openPage('index', 'Index.html')">📄 index.html</li>
+
+                <!-- Pasta Pages -->
+                <li class="folder" onclick="toggleFolder(this)">
+                    <span class="arrow">▶</span> <span class="folder-icon">📁</span> Pages
+                </li>
+                <ul class="nested">
+                    <li class="file" onclick="openPage('sobre', 'Sobre.json')">🗒️ sobre.json</li>
+                    <li class="file" onclick="openPage('projetos', 'Projetos.js')">📜 projetos.js</li>
+                    <li class="file" onclick="openPage('habilidades', 'Habilidades.tsx')">⚛️ habilidades.tsx</li>
+                    <li class="file" onclick="openPage('experiencias', 'Experiencias.js')">💻 experiencias.js</li>
+                    <li class="file" onclick="openPage('contato', 'Contato.py')">🐍 contato.py</li>
+                </ul>
+
+                <!-- Pasta Config -->
+                <li class="folder" onclick="toggleFolder(this)">
+                    <span class="arrow">▶</span> <span class="folder-icon">📁</span> Config
+                </li>
+                <ul class="nested">
+                    <li class="file" onclick="openPage('readme', 'README.md')">📘 README.md</li>
+                    <li class="file" onclick="openPage('theme', 'Theme.css')">🎨 theme.css</li>
+                </ul>
             </ul>
-        </nav>
-        <h2>Portfólio ainda em desenvolvimento</h2>
-        <header class="profile-section">
-            <div class="profile-image">
-                <img src="https://i.postimg.cc/G2TVyWW9/alexfulljpg.jpg" alt="Alexsandro Almeida">
-            </div>
-            <div class="profile-info">
-                <h1>Alexsandro Almeida</h1>
-                <div class="contact-info">
-                    <p><i class="icon">📧</i> <a href="mailto:alexhavilla2022@gmail.com">alexhavilla2022@gmail.com</a>
-                    </p>
-                    <p><i class="icon">💻</i> <a href="https://github.com/Alexdevsoft"
-                            target="_blank">github.com/Alexdevsoft</a></p>
-                    <p><i class="icon">💻</i> <a href="https://www.linkedin.com/in/alexsandro-j-a-almeida"
-                            target="_blank">linkedin.com/in/alexsandro-j-a-almeida/Alexdevsoft</a></p>
+        </aside>
+    </div>
+    <!--<img src="https://i.postimg.cc/G2TVyWW9/alexfulljpg.jpg" alt="Alexsandro Almeida">-->
+
+    <main class="projects-section">
+        <div class="tabs" id="tabs"></div>
+        <div class="content" id="content">
+
+            <h2>Bem-vindo ao meu Portfólio!</h2>
+            <h3>Portfólio ainda em desenvolvimento</h3>
+        </div>
+        <h2>My projects</h2>
+        <div class="projects-list">
+            <div class="project-item" data-project="calculadora">
+                <h3 class="project-title">Calculadora Básica</h3>
+                <div class="project-content">
+                    <iframe src="/projects/calculadora.html"></iframe>
                 </div>
             </div>
-        </header>
 
-        <main class="projects-section">
-            <h2>My projects</h2>
-            <div class="projects-list">
-                <div class="project-item" data-project="calculadora">
-                    <h3 class="project-title">Calculadora Básica</h3>
-                    <div class="project-content">
-                        <iframe src="/projects/calculadora.html"></iframe>
-                    </div>
-                </div>
-
-                <div class="project-item" data-project="crud">
-                    <h3 class="project-title">CRUD</h3>
-                    <div class="project-content">
-                        <iframe src="/projects/crud.html"></iframe>
-                    </div>
-                </div>
-
-                <div class="project-item" data-project="todo">
-                    <h3 class="project-title">Lista de Tarefas (TO DO LIST)</h3>
-                    <div class="project-content">
-                        <iframe src="/projects/todo.html"></iframe>
-                    </div>
-                </div>
-
-                <div class="project-item" data-project="snake">
-                    <h3 class="project-title">Jogo Snake</h3>
-                    <div class="project-content">
-                        <iframe src="/projects/snake.html"></iframe>
-                    </div>
-                </div>
-
-                <div class="project-item" data-project="password">
-                    <h3 class="project-title">Gerador de Senhas</h3>
-                    <div class="project-content">
-                        <iframe src="/projects/password.html"></iframe>
-                    </div>
+            <div class="project-item" data-project="crud">
+                <h3 class="project-title">CRUD</h3>
+                <div class="project-content">
+                    <iframe src="/projects/crud.html"></iframe>
                 </div>
             </div>
-        </main>
 
-        <footer>
-            <p>&copy; 2025 Alexsandro Almeida. Todos os direitos reservados.</p>
-        </footer>
+            <div class="project-item" data-project="todo">
+                <h3 class="project-title">Lista de Tarefas (TO DO LIST)</h3>
+                <div class="project-content">
+                    <iframe src="/projects/todo.html"></iframe>
+                </div>
+            </div>
+
+            <div class="project-item" data-project="snake">
+                <h3 class="project-title">Jogo Snake</h3>
+                <div class="project-content">
+                    <iframe src="/projects/snake.html"></iframe>
+                </div>
+            </div>
+
+            <div class="project-item" data-project="password">
+                <h3 class="project-title">Gerador de Senhas</h3>
+                <div class="project-content">
+                    <iframe src="/projects/password.html"></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Alexsandro Almeida. Todos os direitos reservados.</p>
+    </footer>
     </div>
     <script src="/js/main.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
