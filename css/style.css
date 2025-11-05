@@ -231,15 +231,101 @@ body {
 
 .perfil-card {
     display: flex;
-    border-radius: 8px;
+    margin-left: 50px;
+    border-radius: 30px;
     background-color: #19162567;
     padding: 20px 40px;
     box-shadow: 0 4px 15px 5px rgba(255, 255, 255, 0.2);
     color: #ffffff;
     border-color: #ffffff;
     width: fit-content;
+}
 
+.perfil-card .icons {
+    width: 55px;
+    height: 55px;
+    margin-top: 200px;
+    position: absolute;
+}
 
+.perfil-card .icons-react {
+    width: 50px;
+    height: 50px;
+    margin-top: 200px;
+    margin-left: 55px;
+    position: absolute;
+}
+
+.perfil-card .icons-html {
+    width: 50px;
+    height: 50px;
+    margin-top: 200px;
+    margin-left: 120px;
+    position: absolute;
+}
+
+.perfil-card .icons-css {
+    width: 40px;
+    height: 50px;
+    margin-top: 200px;
+    margin-left: 190px;
+    position: absolute;
+}
+
+.perfil-card .icons-javascript {
+    width: 50px;
+    height: 50px;
+    margin-top: 200px;
+    margin-left: 253px;
+    position: absolute;
+}
+
+.perfil-card .icons-postman {
+    width: 50px;
+    height: 50px;
+    margin-top: 200px;
+    margin-left: 320px;
+    position: absolute;
+}
+
+.perfil-card .icons-spring {
+    width: 50px;
+    height: 50px;
+    margin-top: 200px;
+    margin-left: 388px;
+    position: absolute;
+}
+
+.perfil-card .icons-sql {
+    width: 100px;
+    height: 50px;
+    margin-top: 200px;
+    margin-left: 430px;
+    position: absolute;
+}
+
+.perfil-card .icons-git {
+    width: 50px;
+    height: 50px;
+    margin-top: 200px;
+    margin-left: 510px;
+    position: absolute;
+}
+
+.perfil-card .icons-docker {
+    width: 50px;
+    height: 50px;
+    margin-top: 200px;
+    margin-left: 570px;
+    position: absolute;
+}
+
+.perfil-card .icons-cypress {
+    width: 50px;
+    height: 50px;
+    margin-top: 200px;
+    margin-left: 630px;
+    position: absolute;
 }
 
 .profile-image img {
@@ -288,7 +374,7 @@ body {
     font-size: 2rem;
     color: #fff;
     margin-bottom: 20px;
-    margin-left: 400px;
+    margin-left: 200px;
     padding-left: 15px;
 
 }
