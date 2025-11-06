@@ -185,9 +185,10 @@ document.addEventListener('keydown', (e) => {
 document.getElementById('startBtn').addEventListener('click', toggleGame);
 
 // Adiciona os event listeners aos botões de controle móvel
+
 document.getElementById('upBtn').addEventListener('click', () => changeDirection('up'));
 document.getElementById('downBtn').addEventListener('click', () => changeDirection('down'));
-document.getElementById('leftBtn').addEventListener('click', () => changeDirection('direction')); // ERRO de digitação: deve ser 'left'
+document.getElementById('leftBtn').addEventListener('click', () => changeDirection('left')); // ERRO de digitação: deve ser 'left'
 document.getElementById('rightBtn').addEventListener('click', () => changeDirection('right'));
 
 // Correção do listener do botão 'left' (se existir no HTML)
@@ -195,6 +196,6 @@ const leftBtn = document.querySelector('.btn-control.left');
 if (leftBtn) {
     leftBtn.addEventListener('click', () => changeDirection('left'));
 }
-
 // Desenha o estado inicial
 drawGame();
+
