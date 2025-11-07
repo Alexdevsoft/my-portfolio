@@ -107,14 +107,12 @@ function openPage(id, title) {
             });
         });
     } else {
-        // Conteúdo padrão para os outros arquivos
         content.innerHTML = `<h2>${title}</h2><p>Conteúdo simulado para o arquivo <strong>${title}</strong>.</p>`;
     }
 
     openTabs[id] = { tab, content };
     setActiveTab(id);
 }
-
 
 function setActiveTab(id) {
     document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
@@ -143,9 +141,9 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 document.getElementById("content").addEventListener("click", (e) => {
-    le
+
     const title = e.target.closest(".project-title");
-    if (!title) return; // não é clique em título de projeto, ignora
+    if (!title) return;
 
     const projectItem = title.closest(".project-item");
     if (!projectItem) return;
@@ -156,10 +154,10 @@ document.getElementById("content").addEventListener("click", (e) => {
     const isOpen = projectItem.classList.contains("open");
     if (isOpen) {
         projectItem.classList.remove("open");
-        projectContent.style.maxHeight = null; // fecha
+        projectContent.style.maxHeight = null;
     } else {
         projectItem.classList.add("open");
-        projectContent.style.maxHeight = projectContent.scrollHeight + "px"; // abre
+        projectContent.style.maxHeight = projectContent.scrollHeight + "px";
     }
 });
 
