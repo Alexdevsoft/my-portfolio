@@ -138,25 +138,21 @@ function closeTab(id, event) {
     }
 }
 
-// Quando a página terminar de carregar, abrir automaticamente o index.html
 window.addEventListener("DOMContentLoaded", () => {
     openPage("index", "index.html");
 });
 
-// Delegação de evento: funciona para conteúdo dinâmico inserido em #content
 document.getElementById("content").addEventListener("click", (e) => {
-    // procura o elemento clicado ou o ancestral mais próximo com a classe .project-title
+    le
     const title = e.target.closest(".project-title");
     if (!title) return; // não é clique em título de projeto, ignora
 
-    // encontra o project-item e a div que guarda o conteúdo
     const projectItem = title.closest(".project-item");
     if (!projectItem) return;
 
     const projectContent = projectItem.querySelector(".project-content");
     if (!projectContent) return;
 
-    // toggle visual: usa classe 'open' e controle por max-height para animação
     const isOpen = projectItem.classList.contains("open");
     if (isOpen) {
         projectItem.classList.remove("open");
