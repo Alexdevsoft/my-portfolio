@@ -93,7 +93,19 @@ function openPage(id, title) {
                         <iframe src="/projects/password.html"></iframe>
                     </div>
                 </div>
-            </div>`
+            </div>`;
+
+        const projectItems = content.querySelectorAll(".project-item");
+        projectItems.forEach(item => {
+            const title = item.querySelector(".project-title");
+            const contentDiv = item.querySelector(".project-content");
+            contentDiv.style.display = "none";
+
+            title.addEventListener("click", () => {
+                const isVisible = contentDiv.style.display === "block";
+                contentDiv.style.display = isVisible ? "none" : "block";
+            });
+        });
     } else {
         // Conteúdo padrão para os outros arquivos
         content.innerHTML = `<h2>${title}</h2><p>Conteúdo simulado para o arquivo <strong>${title}</strong>.</p>`;
@@ -130,3 +142,28 @@ function closeTab(id, event) {
 window.addEventListener("DOMContentLoaded", () => {
     openPage("index", "index.html");
 });
+
+// Delegação de evento: funciona para conteúdo dinâmico inserido em #content
+document.getElementById("content").addEventListener("click", (e) => {
+    // procura o elemento clicado ou o ancestral mais próximo com a classe .project-title
+    const title = e.target.closest(".project-title");
+    if (!title) return; // não é clique em título de projeto, ignora
+
+    // encontra o project-item e a div que guarda o conteúdo
+    const projectItem = title.closest(".project-item");
+    if (!projectItem) return;
+
+    const projectContent = projectItem.querySelector(".project-content");
+    if (!projectContent) return;
+
+    // toggle visual: usa classe 'open' e controle por max-height para animação
+    const isOpen = projectItem.classList.contains("open");
+    if (isOpen) {
+        projectItem.classList.remove("open");
+        projectContent.style.maxHeight = null; // fecha
+    } else {
+        projectItem.classList.add("open");
+        projectContent.style.maxHeight = projectContent.scrollHeight + "px"; // abre
+    }
+});
+
