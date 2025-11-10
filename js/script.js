@@ -106,6 +106,28 @@ function openPage(id, title) {
                 contentDiv.style.display = isVisible ? "none" : "block";
             });
         });
+    }
+    else if (id === "sobre") {
+        content.innerHTML = `
+<pre style="color: #dcdcaa; font-family: Consolas, monospace; font-size: 14px;">
+{
+  <span style="color:#9cdcfe;">"nome"</span>: <span style="color:#ce9178;">"Alexsandro Almeida"</span>,
+  <span style="color:#9cdcfe;">"idade"</span>: <span style="color:#b5cea8;">45</span>,
+  <span style="color:#9cdcfe;">"profissão"</span>: <span style="color:#ce9178;">"Analista e Desenvolvedor de Sistemas"</span>,
+  <span style="color:#9cdcfe;">"resumo"</span>: <span style="color:#ce9178;">"Sou desenvolvedor fullstack e analista de qualidade de software, com mais de 2 anos de experiência em Java, React, Spring Boot e automação de testes."</span>,
+  <span style="color:#9cdcfe;">"skills"</span>: [<span style="color:#ce9178;">"Java"</span>, <span style="color:#ce9178;">"Spring Boot"</span>, <span style="color:#ce9178;">"JavaScript"</span>, <span style="color:#ce9178;">"React"</span>, <span style="color:#ce9178;">"Selenium"</span>, <span style="color:#ce9178;">"MySQL"</span>, <span style="color:#ce9178;">"Docker"</span>],
+  <span style="color:#9cdcfe;">"softSkills"</span>: [<span style="color:#ce9178;">"Comunicação"</span>, <span style="color:#ce9178;">"Trabalho em equipe"</span>, <span style="color:#ce9178;">"Aprendizado contínuo"</span>],
+  <span style="color:#9cdcfe;">"localização"</span>: <span style="color:#ce9178;">"Brasil"</span>,
+  <span style="color:#9cdcfe;">"hobbies"</span>: [<span style="color:#ce9178;">"Escrever livros"</span>, <span style="color:#ce9178;">"Viajar"</span>, <span style="color:#ce9178;">"Cinema"</span>, <span style="color:#ce9178;">"Tecnologia"</span>],
+  <span style="color:#9cdcfe;">"linkedin"</span>: <span style="color:#ce9178;">"http://www.linkedin.com/in/alexsandro-j-a-almeida"</span>,
+  <span style="color:#9cdcfe;">"github"</span>: <span style="color:#ce9178;">"https://github.com/Alexdevsoft"</span>
+}
+</pre>
+<p style="color:#6a9955;">// Criado por Alexsandro Almeida - Analista Desenvolvimento de Sistemas</p>
+
+    `;
+
+
     } else {
         content.innerHTML = `<h2>${title}</h2><p>Conteúdo simulado para o arquivo <strong>${title}</strong>.</p>`;
     }
