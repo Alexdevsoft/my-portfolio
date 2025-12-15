@@ -32,7 +32,7 @@ function openPage(id, title) {
     if (id === "index") {
         content.innerHTML = `
             <h2>Bem vindo ao meu Portfólio</h2>
-            <h3>Portfólio ainda em desenvolvimento 04/11/2025</h3>
+            <h3>Portfólio ainda em desenvolvimento 14/12/2025</h3>
             <h3>Selecione um ítem no menu lateral para abrir</h3><br><br>
             <div class="perfil-card">
                 <div><img class="icons" src="https://i.postimg.cc/4N6P1RV1/alex-java.png"></div>
