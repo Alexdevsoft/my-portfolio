@@ -13,6 +13,21 @@ function toggleFolder(folder) {
 
 }
 
+function changeAccentColor(color) {
+    document.documentElement.style.setProperty('--accent-color', color);
+
+    // Atualiza visualmente elementos que usam a cor principal (ex: bordas, botões)
+    const elementsToColor = document.querySelectorAll('.project-title, .exp-company, .contact-btn, h2, h3, .arrow, .folder-icon');
+    elementsToColor.forEach(el => {
+        el.style.color = color;
+        el.style.borderColor = color;
+    });
+
+    // Atualiza o código exibido na tela
+    const codeSpan = document.getElementById('color-code');
+    if (codeSpan) codeSpan.innerText = color;
+}
+
 function openPage(id, title) {
     if (openTabs[id]) {
         setActiveTab(id);
@@ -224,12 +239,130 @@ function openPage(id, title) {
             </div>
             <br>
 
-            <form class="contact-form" onsubmit="event.preventDefault(); alert('Mensagem simulada enviada!');">
-                <input class="contact-input" type="text" placeholder="const nome = 'Seu Nome';" required>
-                <input class="contact-input" type="email" placeholder="const email = 'seu@email.com';" required>
-                <textarea class="contact-input" rows="5" placeholder="// Digite sua mensagem aqui..." required></textarea>
-                <button class="contact-btn" type="submit">Enviar Mensagem.execute()</button>
-            </form>
+            
+        `;
+    }
+    else if (id === "readme") {
+        content.innerHTML = `
+            <style>
+                .readme-container {
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    max-width: 800px;
+                    color: #d4d4d4;
+                    line-height: 1.6;
+                    padding: 0 20px;
+                }
+                .readme-container h1, .readme-container h2 {
+                    border-bottom: 1px solid #3c3c3c;
+                    padding-bottom: 10px;
+                    color: #ffffff;
+                }
+                .readme-container ul {
+                    padding-left: 20px;
+                }
+                .readme-container li {
+                    margin-bottom: 5px;
+                }
+                .readme-container code {
+                    background-color: #3c3c3c;
+                    padding: 2px 5px;
+                    border-radius: 4px;
+                    font-family: 'Consolas', monospace;
+                    color: #ce9178;
+                }
+                .readme-tag {
+                    display: inline-block;
+                    background: #0e639c;
+                    color: white;
+                    padding: 2px 8px;
+                    border-radius: 12px;
+                    font-size: 0.8em;
+                    margin-right: 5px;
+                }
+            </style>
+
+            <div class="readme-container">
+                <h1>📘 VS Code Portfolio</h1>
+                <p>
+                    <span class="readme-tag">v1.0.0</span>
+                </p>
+                <p>Bem-vindo ao código-fonte do meu portfólio pessoal! Este projeto foi criado para simular a experiência de uso do <strong>Visual Studio Code</strong>.</p>
+
+                <h2>🚀 Tecnologias Utilizadas</h2>
+                <ul>
+                    <li><strong>HTML5</strong>: Estrutura semântica.</li>
+                    <li><strong>CSS3</strong>: Estilização do tema Dark e layout.</li>
+                    <li><strong>JavaScript</strong>: Manipulação de DOM para abrir as abas sem recarregar a página.</li>
+                </ul>
+
+                <h2>⚙️ Funcionalidades</h2>
+                <ul>
+                    <li>Navegação por abas dinâmicas.</li>
+                    <li>Simulação de sistema de arquivos (árvore de pastas).</li>
+                    <li>Visualização de projetos via <code>iframe</code>.</li>
+                </ul>
+
+                <h2>📬 Contato</h2>
+                <p>Para falar comigo, abra o arquivo <code>contato.py</code> no menu lateral ou envie um email para <strong>alexhavilla2022@gmail.com</strong>.</p>
+                
+                <br>
+                <p><em>Feito por Alexsandro Almeida.</em></p>
+            </div>
+        `;
+    }
+    else if (id === "theme") {
+        content.innerHTML = `
+            <style>
+                .theme-container { padding: 20px; color: #d4d4d4; font-family: 'Segoe UI', sans-serif; }
+                .color-btn { 
+                    width: 40px; 
+                    height: 40px; 
+                    border: 2px solid #3c3c3c; 
+                    border-radius: 50%; 
+                    cursor: pointer; 
+                    display: inline-block; 
+                    margin-right: 15px; 
+                    transition: transform 0.2s;
+                }
+                .color-btn:hover { transform: scale(1.1); border-color: #fff; }
+                
+                /* Cores dos botões */
+                .btn-blue { background-color: #007acc; }   /* Padrão VS Code */
+                .btn-purple { background-color: #bd2c00; } /* Simulando erro/vermelho ou tema quente */
+                .btn-green { background-color: #2e7d32; }  /* Matrix/Vue */
+                .btn-orange { background-color: #d84315; } /* Ubuntu */
+                .btn-dracula { background-color: #bd93f9; } /* Dracula Theme */
+
+                .code-preview {
+                    background-color: #1e1e1e;
+                    border: 1px solid #3c3c3c;
+                    padding: 15px;
+                    font-family: 'Consolas', monospace;
+                    margin-top: 20px;
+                    color: #dcdcaa;
+                }
+            </style>
+
+            <div class="theme-container">
+                <h2>🎨 Preferências de Cor</h2>
+                <p>Selecione uma cor de destaque para o ambiente:</p>
+                
+                <div style="margin: 20px 0;">
+                    <div class="color-btn btn-blue" onclick="mudarCor('#007acc')" title="Azul (Padrão)"></div>
+                    <div class="color-btn btn-green" onclick="mudarCor('#2e7d32')" title="Verde"></div>
+                    <div class="color-btn btn-orange" onclick="mudarCor('#d84315')" title="Laranja"></div>
+                    <div class="color-btn btn-dracula" onclick="mudarCor('#bd93f9')" title="Roxo (Dracula)"></div>
+                </div>
+
+                <h3>Configuração Atual (CSS)</h3>
+                <div class="code-preview">
+                    :root {<br>
+                    &nbsp;&nbsp;--accent-color: <span id="color-display" style="color: #569cd6;">#007acc</span>;<br>
+                    }
+                </div>
+                
+                <p style="color: #6a9955; margin-top: 10px;">// A interface será atualizada instantaneamente.</p>
+            </div>
         `;
     }
 
@@ -341,6 +474,32 @@ function openPage(id, title) {
 
     openTabs[id] = { tab, content };
     setActiveTab(id);
+}
+function mudarCor(cor) {
+    // 1. Muda a variável de cor global (se você usar variáveis CSS)
+    document.documentElement.style.setProperty('--main-color', cor);
+
+    // 2. Tenta mudar elementos específicos manualmente para garantir que funcione no seu código atual
+    // Muda a cor dos títulos h2 e h3
+    document.querySelectorAll('h2, h3').forEach(el => el.style.color = cor);
+
+    // Muda a cor das setinhas das pastas e ícones
+    document.querySelectorAll('.arrow, .folder-icon').forEach(el => el.style.color = cor);
+
+    // Muda a cor dos títulos dos projetos
+    document.querySelectorAll('.project-title').forEach(el => el.style.color = cor);
+
+    // Muda a borda e texto dos cards de Habilidade (Skills) ao passar o mouse
+    const styleSheet = document.createElement("style");
+    styleSheet.innerText = `.skill-card:hover { border-color: ${cor} !important; }`;
+    document.head.appendChild(styleSheet);
+
+    // 3. Atualiza o texto do código na tela da aba Theme
+    const display = document.getElementById('color-display');
+    if (display) {
+        display.innerText = cor;
+        display.style.color = cor;
+    }
 }
 
 function setActiveTab(id) {
