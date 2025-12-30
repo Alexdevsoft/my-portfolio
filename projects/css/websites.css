@@ -1,0 +1,85 @@
+/* projects/css/websites.css */
+
+body {
+    background-color: transparent;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 20px;
+    /* Um pouco de espaço nas bordas */
+
+    /* CONFIGURAÇÃO PARA VÁRIOS CARDS LADO A LADO */
+    display: flex;
+    justify-content: flex-start;
+    /* Alinha tudo à esquerda */
+    align-items: flex-start;
+    /* Alinha ao topo */
+    flex-wrap: wrap;
+    /* Permite que os cards desçam se faltar espaço */
+    gap: 20px;
+    /* Espaço entre um card e outro */
+}
+
+.vitrine-card {
+    background-color: #252526;
+    border: 1px solid #3c3c3c;
+    border-radius: 8px;
+    padding: 15px;
+
+    /* Tamanho do Card */
+    width: 300px;
+    /* Largura fixa menor para caberem vários na linha */
+    flex-grow: 1;
+    /* Permite esticar um pouco se necessário */
+    max-width: 350px;
+    /* Limite máximo para não ficar gigante */
+
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.vitrine-card:hover {
+    transform: translateY(-5px);
+    border-color: #007acc;
+}
+
+.vitrine-title {
+    color: #4ec9b0;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    /* Evita quebrar linha no título */
+    overflow: hidden;
+    /* Esconde excesso */
+    text-overflow: ellipsis;
+    /* Coloca "..." se o texto for longo */
+}
+
+.vitrine-img {
+    width: 100%;
+    height: 150px;
+    /* Altura fixa para todos ficarem iguais */
+    object-fit: cover;
+    /* Recorta a imagem para preencher sem distorcer */
+    border-radius: 4px;
+    border: 1px solid #333;
+    margin-bottom: 15px;
+}
+
+.vitrine-btn {
+    display: block;
+    /* Botão ocupa a largura total do card */
+    background-color: #0e639c;
+    color: white;
+    padding: 10px 0;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.vitrine-btn:hover {
+    background-color: #1177bb;
+}

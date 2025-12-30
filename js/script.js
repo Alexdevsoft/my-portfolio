@@ -99,6 +99,15 @@ function openPage(id, title) {
     else if (id === "projetos") {
         content.innerHTML = `
         <h2>My projects</h2>
+        
+            <div style="margin-bottom: 50px; border-bottom: 1px solid #3c3c3c; padding-bottom: 20px;">
+                <iframe src="/projects/websites.html" 
+                        style="width: 100%; height: 400px; border: none; overflow: hidden;" 
+                        title="2Minute Facelift">
+                </iframe>
+            </div>
+
+            
             <div class="projects-list">
                 <div class="project-item" data-project="calculadora">
                     <h3 class="project-title">Calculadora Básica</h3>
