@@ -126,7 +126,7 @@
 .tab {
     width: 190px;
     height: 70px;
-    padding: 12px 18px;
+    padding: 0 15px;
     cursor: pointer;
     background-color: #1c1c1c;
     color: #ccc;
@@ -136,7 +136,17 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    justify-content: flex-start;
 
+}
+
+.tab-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    margin-right: 5px;
+    /* Espaço entre o ícone e o texto */
+    vertical-align: middle;
 }
 
 .tab.active {
@@ -147,7 +157,7 @@
 .tab .close {
     cursor: pointer;
     color: #fff;
-    margin-left: 30px;
+    margin-left: 12px;
 }
 
 .tab .close:hover {

@@ -28,16 +28,43 @@ function changeAccentColor(color) {
     if (codeSpan) codeSpan.innerText = color;
 }
 
+function getIcon(filename) {
+    const ext = filename.split('.').pop().toLowerCase(); // Pega o que vem depois do ponto
+
+    // Links diretos para os ícones oficiais do VS Code (via GitHub)
+    const icons = {
+        'html': 'https://raw.githubusercontent.com/vscode-icons/vscode-icons/master/icons/file_type_html.svg',
+        'css': 'https://raw.githubusercontent.com/vscode-icons/vscode-icons/master/icons/file_type_css.svg',
+        'js': 'https://raw.githubusercontent.com/vscode-icons/vscode-icons/master/icons/file_type_js.svg',
+        'json': 'https://raw.githubusercontent.com/vscode-icons/vscode-icons/master/icons/file_type_json.svg',
+        'md': 'https://raw.githubusercontent.com/vscode-icons/vscode-icons/master/icons/file_type_markdown.svg',
+        'py': 'https://raw.githubusercontent.com/vscode-icons/vscode-icons/master/icons/file_type_python.svg',
+        'tsx': 'https://raw.githubusercontent.com/vscode-icons/vscode-icons/master/icons/file_type_reactjs.svg',
+        'ts': 'https://raw.githubusercontent.com/vscode-icons/vscode-icons/master/icons/file_type_typescript.svg',
+        'java': 'https://raw.githubusercontent.com/vscode-icons/vscode-icons/master/icons/file_type_java.svg'
+    };
+
+    // Retorna o ícone correspondente ou um ícone padrão de "arquivo" se não achar
+    return icons[ext] || 'https://raw.githubusercontent.com/vscode-icons/vscode-icons/master/icons/default_file.svg';
+}
+
 function openPage(id, title) {
     if (openTabs[id]) {
         setActiveTab(id);
         return;
     }
 
+    const iconSrc = getIcon(title);
+
     const tab = document.createElement("div");
     tab.classList.add("tab");
     tab.dataset.id = id;
-    tab.innerHTML = `${title} <span class="close" onclick="closeTab('${id}', event)">×</span>`;
+    tab.innerHTML = `
+        <img src="${iconSrc}" class="tab-icon" alt="icon"> 
+        ${title} 
+        <span class="close" onclick="closeTab('${id}', event)">×</span>
+    `;
+
     tab.onclick = () => setActiveTab(id);
     tabsContainer.appendChild(tab);
 
@@ -47,8 +74,7 @@ function openPage(id, title) {
     if (id === "index") {
         content.innerHTML = `
             <h2>Bem vindo ao meu Portfólio</h2>
-            <h3>Portfólio ainda em desenvolvimento</h3>
-            <h3>Selecione um ítem no menu lateral para abrir</h3><br><br>
+            <h3>&nbsp &nbsp &nbsp &nbsp &nbsp &nbspSelecione um ítem no menu lateral para abrir</h3><br><br>
             <div class="perfil-card">
                 <div><img class="icons" src="https://i.postimg.cc/4N6P1RV1/alex-java.png"></div>
                 <div><img class="icons-react" src="https://i.postimg.cc/R0Nwyk6y/alex-react.png"></div>
@@ -65,7 +91,7 @@ function openPage(id, title) {
                     <img src="https://i.postimg.cc/cJqK6kPK/alexholo.jpg" alt="Alexsandro Almeida">
                 </div>
                 <div class="profile-info">
-                    <h3>Alexsandro Almeida<br>45 anos<br>Analista Desenvolvimento de Sistemas</h3>
+                    <h3>Alexsandro Almeida<br>Densenvolvedor Full-Stack Java<br>Analista Desenvolvimento de Sistemas</h3>
                 </div>
             </div>
         `;
