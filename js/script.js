@@ -100,14 +100,21 @@ function openPage(id, title) {
         content.innerHTML = `
         <h2>My projects</h2>
         
-            <div style="margin-bottom: 50px; border-bottom: 1px solid #3c3c3c; padding-bottom: 20px;">
-                <iframe src="/projects/websites.html" 
-                        style="width: 100%; height: 400px; border: none; overflow: hidden;" 
-                        title="2Minute Facelift">
-                </iframe>
-            </div>
+            <div class="websites-container">
+                
+                <div class="vitrine-card">
+                    <h3 class="vitrine-title">Website: 2Minute Facelift</h3>
+                    
+                    <a href="https://2minutefacelift.shop" target="_blank">
+                        <img class="vitrine-img" src="https://i.postimg.cc/DZmFmN7J/2lift.jpg" alt="Preview Site">
+                    </a>
+                    
+                    <a href="https://2minutefacelift.shop" target="_blank" class="vitrine-btn">
+                        Visitar Site 🚀
+                    </a>
+                </div>
 
-            
+                </div>    
             <div class="projects-list">
                 <div class="project-item" data-project="calculadora">
                     <h3 class="project-title">Calculadora Básica</h3>
@@ -145,17 +152,21 @@ function openPage(id, title) {
                 </div>
             </div>`;
 
-        const projectItems = content.querySelectorAll(".project-item");
-        projectItems.forEach(item => {
-            const title = item.querySelector(".project-title");
-            const contentDiv = item.querySelector(".project-content");
-            contentDiv.style.display = "none";
+        setTimeout(() => {
+            const projectItems = content.querySelectorAll(".project-item");
+            projectItems.forEach(item => {
+                const title = item.querySelector(".project-title");
+                const contentDiv = item.querySelector(".project-content");
 
-            title.addEventListener("click", () => {
-                const isVisible = contentDiv.style.display === "block";
-                contentDiv.style.display = isVisible ? "none" : "block";
+                contentDiv.style.display = "none";
+
+                title.addEventListener("click", () => {
+                    const isVisible = contentDiv.style.display === "block";
+                    contentDiv.style.display = isVisible ? "none" : "block";
+                    item.classList.toggle('active', !isVisible);
+                });
             });
-        });
+        }, 50);
     }
     else if (id === "sobre") {
         content.innerHTML = `

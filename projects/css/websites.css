@@ -1,22 +1,24 @@
 /* projects/css/websites.css */
 
-body {
-    background-color: transparent;
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    padding: 20px;
-    /* Um pouco de espaço nas bordas */
+/* Container que segura os cards (Substitui o antigo 'body') */
+.websites-container {
+    width: 100%;
+    padding: 20px 0;
+    /* Espaço em cima e embaixo */
 
-    /* CONFIGURAÇÃO PARA VÁRIOS CARDS LADO A LADO */
+    /* GRID: Organiza os cards lado a lado */
     display: flex;
     justify-content: flex-start;
-    /* Alinha tudo à esquerda */
+    /* Alinha à esquerda */
     align-items: flex-start;
-    /* Alinha ao topo */
     flex-wrap: wrap;
-    /* Permite que os cards desçam se faltar espaço */
+    /* Permite quebrar linha quando encher */
     gap: 20px;
-    /* Espaço entre um card e outro */
+    /* Espaço entre os cards */
+
+    border-bottom: 1px solid #3c3c3c;
+    /* Linha separando dos projetos antigos */
+    margin-bottom: 30px;
 }
 
 .vitrine-card {
@@ -27,11 +29,8 @@ body {
 
     /* Tamanho do Card */
     width: 300px;
-    /* Largura fixa menor para caberem vários na linha */
     flex-grow: 1;
-    /* Permite esticar um pouco se necessário */
     max-width: 350px;
-    /* Limite máximo para não ficar gigante */
 
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -41,6 +40,7 @@ body {
 .vitrine-card:hover {
     transform: translateY(-5px);
     border-color: #007acc;
+    /* Azul VS Code */
 }
 
 .vitrine-title {
@@ -49,27 +49,26 @@ body {
     margin-bottom: 15px;
     font-size: 1.2rem;
     white-space: nowrap;
-    /* Evita quebrar linha no título */
     overflow: hidden;
-    /* Esconde excesso */
     text-overflow: ellipsis;
-    /* Coloca "..." se o texto for longo */
 }
 
 .vitrine-img {
     width: 100%;
     height: 150px;
-    /* Altura fixa para todos ficarem iguais */
     object-fit: cover;
-    /* Recorta a imagem para preencher sem distorcer */
     border-radius: 4px;
     border: 1px solid #333;
     margin-bottom: 15px;
+    transition: opacity 0.2s;
+}
+
+.vitrine-img:hover {
+    opacity: 0.8;
 }
 
 .vitrine-btn {
     display: block;
-    /* Botão ocupa a largura total do card */
     background-color: #0e639c;
     color: white;
     padding: 10px 0;
